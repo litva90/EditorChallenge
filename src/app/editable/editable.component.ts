@@ -40,8 +40,7 @@ export class EditableComponent implements OnInit, AfterViewInit {
     }
   }
 
-  onEditableChange(inputEvent) {
-    //this.innerHtml = inputEvent.target.innerHTML
+  onEditableInput(inputEvent) {
     this.innerHtmlChange.emit(inputEvent.target.innerHTML);
   }
 

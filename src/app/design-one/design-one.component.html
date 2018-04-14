@@ -5,8 +5,7 @@
     (innerHtmlChange)="onInnerHtmlChange($event, i)"
     (addNoteEvent)="onAddNoteEvent(i)"
     (deleteNoteEvent)="onDeleteNoteEvent(i)"
-    (addNoteEvent)="onAddNote(i)"
     ></app-editable>
 </div>
 
-<div class="preview">{{notesPreview | json}}</div>
+<div class="preview">{{notes | json}}</div>
