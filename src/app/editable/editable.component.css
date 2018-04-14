@@ -1,0 +1,37 @@
+.container {
+    display: flex;
+    align-items: stretch;
+    margin-bottom: 5px;
+}
+
+.editable {
+    width: 300px;
+    padding: 10px;
+    word-wrap: break-word;
+    background-color: white;
+}
+
+.button {
+    width: 40px;
+    border: none;
+    margin-right: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.button:focus {
+    outline: none;
+}
+
+.button.plus {
+    background-color: #6fb52a;
+}
+
+.button.minus {
+    background-color: #d04242;
+}
+
+.button.minus:disabled {
+    background-color: #f5f5f5;
+    cursor: default;
+}

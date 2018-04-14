@@ -1,0 +1,9 @@
+.editable-container {
+    float: left;
+}
+
+.preview {
+    float: left;
+    width: 300px;
+    word-wrap: break-word;
+}
