@@ -10,7 +10,6 @@ import * as _ from 'lodash';
 export class DesignOneComponent implements OnInit, AfterViewInit {
 
   notes: textModel = {data: []};
-  stringNotes: Array<string> = [];
   @ViewChild('editable') editable: ElementRef;
   editableDiv: HTMLDivElement;
 
@@ -19,8 +18,6 @@ export class DesignOneComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.dataService.getDesignOneData().subscribe(result => {
       this.notes = result;
-      this.stringNotes = result.data.slice(0);
-      console.log(this.stringNotes);
     });
   }
 
@@ -29,19 +26,19 @@ export class DesignOneComponent implements OnInit, AfterViewInit {
   }
 
   onInnerHtmlChange(newHtml: string, index: number) {
-    this.stringNotes[index] = newHtml;
+    this.notes.data[index].row = newHtml;
   }
 
   onAddNoteEvent(index: number) {
-    this.stringNotes.splice(index + 1, 0, "");
+    this.notes.data.splice(index + 1, 0, {id: this.notes.data.length + 1, row: ""});
   }
 
   onDeleteNoteEvent(index: number) {
-    this.stringNotes.splice(index, 1);
+    this.notes.data.splice(index, 1);
   }
 
   isLast() {
-    return this.stringNotes.length < 2;
+    return this.notes.data.length < 2;
   }
 
 }

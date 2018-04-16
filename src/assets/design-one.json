@@ -1,5 +1,8 @@
 {
     "data": [
-        "<i>Hello</i> world...<br><br>This is some content<br><br>Isn't it awesome?<br><br>I like it..."
+        {
+            "id": 1,
+            "row": "<i>Hello</i> world...<br><br>This is some content<br><br>Isn't it awesome?<br><br>I like it..."
+        }
     ]
 }

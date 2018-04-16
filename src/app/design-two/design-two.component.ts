@@ -17,28 +17,28 @@ export class DesignTwoComponent implements OnInit {
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    this.dataService.getDesignTwoData().subscribe(result => {
-      this.stringNotes = _.cloneDeep(result);
-      this.notesPreview = _.cloneDeep(result);
-    });
+    // this.dataService.getDesignTwoData().subscribe(result => {
+    //   this.stringNotes = _.cloneDeep(result);
+    //   this.notesPreview = _.cloneDeep(result);
+    // });
   }
 
   onInnerHtmlChange(newHtml: string, index: number) {
-      this.notesPreview.data[index] = newHtml;
+      //this.notesPreview.data[index] = newHtml;
   }
 
   onAddNoteEvent(index: number) {
-    this.stringNotes.data = [
-      ...this.stringNotes.data.slice(0, index + 1),
-      "",
-      ...this.stringNotes.data.slice(index + 1, this.stringNotes.data.length)
-    ];
+    // this.stringNotes.data = [
+    //   ...this.stringNotes.data.slice(0, index + 1),
+    //   "",
+    //   ...this.stringNotes.data.slice(index + 1, this.stringNotes.data.length)
+    // ];
 
-    this.notesPreview.data = [
-      ...this.notesPreview.data.slice(0, index + 1),
-      "",
-      ...this.notesPreview.data.slice(index + 1, this.notesPreview.data.length)
-    ]
+    // this.notesPreview.data = [
+    //   ...this.notesPreview.data.slice(0, index + 1),
+    //   "",
+    //   ...this.notesPreview.data.slice(index + 1, this.notesPreview.data.length)
+    // ]
   }
 
   onDeleteNoteEvent(index: number) {
