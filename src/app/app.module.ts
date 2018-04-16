@@ -9,6 +9,8 @@ import { DataService } from './data.service';
 import { EditableComponent } from './editable/editable.component';
 import { DesignTwoComponent } from './design-two/design-two.component';
 
+import { NgxJsonViewerModule } from 'ngx-json-viewer';
+import { DragulaModule } from 'ng2-dragula';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { DesignTwoComponent } from './design-two/design-two.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxJsonViewerModule,
+    DragulaModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

@@ -1,11 +1,12 @@
-<div class="editable-container">
-    <app-editable *ngFor="let note of notes.data; let i = index; " 
+<div class="editable-container" [dragula]='"first-bag"' >
+    <app-editable *ngFor="let note of notesObjects?.data; let i = index; " 
     [innerHtml]="note.row"
     [isLastElement]="isLast()"
     (innerHtmlChange)="onInnerHtmlChange($event, i)"
     (addNoteEvent)="onAddNoteEvent(i)"
     (deleteNoteEvent)="onDeleteNoteEvent(i)"
+    draggable="true"
     ></app-editable>
 </div>
 
-<div class="preview">{{notes | json}}</div>
+<ngx-json-viewer class="preview" [json]="notes"></ngx-json-viewer>
