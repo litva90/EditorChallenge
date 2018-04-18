@@ -1,5 +1,5 @@
 <div class="container">
-    <div #editable class="editable" contenteditable="true" (input)="onEditableInput($event)" (keydown)="onKeydown($event)">
+    <div #editable class="editable" contenteditable="true" (input)="onEditableInput($event)" (blur)="onBlur()" (keydown)="onKeydown($event)">
     </div>
     <button class="button plus" (click)="addNote()">+</button>
     <button class="button minus" (click)="deleteNote()" [disabled]=isLastElement>-</button>

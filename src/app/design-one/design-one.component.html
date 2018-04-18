@@ -1,4 +1,4 @@
-<div class="editable-container" [dragula]='"first-bag"' >
+<div class="editable-container" [dragula]='"first-bag"' [dragulaModel]='notes'>
     <app-editable *ngFor="let note of notesObjects?.data; let i = index; " 
     [innerHtml]="note.row"
     [isLastElement]="isLast()"
@@ -9,4 +9,5 @@
     ></app-editable>
 </div>
 
-<ngx-json-viewer class="preview" [json]="notes"></ngx-json-viewer>
+{{ notes | json }}
+<!-- <ngx-json-viewer class="preview" [json]="notes"></ngx-json-viewer> -->

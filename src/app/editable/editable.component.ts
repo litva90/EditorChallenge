@@ -13,6 +13,7 @@ export class EditableComponent implements OnInit, AfterViewInit {
   @Output() innerHtmlChange: EventEmitter<string> = new EventEmitter();
   @Output() addNoteEvent: EventEmitter<null> = new EventEmitter();
   @Output() deleteNoteEvent: EventEmitter<null> = new EventEmitter();
+  @Output() blurEvent: EventEmitter<null> = new EventEmitter();
   @ViewChild('editable') editable: ElementRef;
   editableDiv: HTMLDivElement;
 
@@ -50,6 +51,10 @@ export class EditableComponent implements OnInit, AfterViewInit {
 
   deleteNote() {
     this.deleteNoteEvent.emit();
+  }
+
+  onBlur() {
+    this.blurEvent.emit();
   }
 
 }
