@@ -4,20 +4,18 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { DesignOneComponent } from './design-one/design-one.component';
 import { DataService } from './data.service';
 import { EditableComponent } from './editable/editable.component';
-import { DesignTwoComponent } from './design-two/design-two.component';
 
 import { NgxJsonViewerModule } from 'ngx-json-viewer';
 import { DragulaModule } from 'ng2-dragula';
+import { NotesComponent } from './notes/notes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DesignOneComponent,
     EditableComponent,
-    DesignTwoComponent
+    NotesComponent
   ],
   imports: [
     BrowserModule,

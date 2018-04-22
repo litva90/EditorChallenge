@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DataService, textModel } from './data.service';
+import { DataService, notesModel } from './data.service';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
@@ -8,11 +8,13 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'Editor Challenge';
 
-  designTwoData: Observable<textModel>;
+  designOneData: notesModel;
+  designTwoData: notesModel;
 
   constructor(private dataService: DataService) {
-    this.designTwoData = this.dataService.getDesignTwoData();
+    this.dataService.getDesignOneData().subscribe(data => this.designOneData = data);
+    this.dataService.getDesignTwoData().subscribe(data => this.designTwoData = data);
   }
 }

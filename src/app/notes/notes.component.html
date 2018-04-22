@@ -1,0 +1,11 @@
+<div class="editable-container" [dragula]='"another-bag"' [dragulaModel]='notesDataConverted.data'>
+  <app-editable *ngFor="let convertedNote of notesDataConverted.data; let i = index; trackBy:trackByIndex" 
+  [innerHtml]="convertedNote.row"
+  [isLastElement]="isLast()"
+  (innerHtmlChange)="onInnerHtmlChange($event, i)"
+  (addNoteEvent)="onAddNoteEvent(i)"
+  (deleteNoteEvent)="onDeleteNoteEvent(i)"
+  ></app-editable>
+</div>
+
+{{notes | json}}
