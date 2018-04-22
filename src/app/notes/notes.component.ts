@@ -44,7 +44,7 @@ export class NotesComponent implements OnChanges {
 	}
 
 	updateBaseRow() {
-		this.notes.data = this.notesDataConverted.data.map(note => note.row);
+		this.notes.data = Object.values(this.notesDataConverted.data);
 	}
 
 	onDragEnd = v => {
